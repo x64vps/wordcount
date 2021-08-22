@@ -7,14 +7,13 @@ import (
 )
 
 func main()  {
-	argsWithProg := os.Args[1:]
-
-	if argsWithProg[0] == "" {
-		fmt.Println(0)
-		return
+	if len(os.Args) != 2 {
+		fmt.Println("Usage: wordcount PHRASE")
+		os.Exit(1)
 	}
 
-	parts := strings.Split(argsWithProg[0], " ")
+	phrase := os.Args[1]
+	words := strings.Fields(phrase)
 
-	fmt.Println(len(parts))
+	fmt.Println(len(words))
 }
