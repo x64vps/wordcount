@@ -10,12 +10,9 @@ import (
 )
 
 func main()  {
-	var s string
-	fmt.Scan(&s)
+	argsWithProg := os.Args[1:]
 
-	src := readString()
-
-	parts := strings.Split(src, " ")
+	parts := strings.Split(argsWithProg[0], " ")
 
 	fmt.Println(len(parts))
 }
